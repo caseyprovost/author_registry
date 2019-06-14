@@ -25,11 +25,12 @@ COPY . $APP_HOME
 WORKDIR $APP_HOME
 
 # Configure development environment variables
-ENV RAILS_ENV=development \
-    RACK_ENV=development
+ENV RAILS_ENV=production \
+    RACK_ENV=production
 
 # Expose port 3000 from the container
-EXPOSE 3000
+EXPOSE 80
+EXPOSE 443
 
 # Run puma server by default
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
