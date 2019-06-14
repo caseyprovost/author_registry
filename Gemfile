@@ -38,6 +38,8 @@ group :development, :test do
   gem "rubocop-rspec"
   gem "brakeman"
   gem "bundler-audit"
+  gem "spring"
+  gem "spring-commands-rspec"
 end
 
 group :development do
