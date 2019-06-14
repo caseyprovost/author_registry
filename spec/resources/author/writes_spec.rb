@@ -1,11 +1,13 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe AuthorResource, type: :resource do
-  describe 'creating' do
+  describe "creating" do
     let(:payload) do
       {
         data: {
-          type: 'authors',
+          type: "authors",
           attributes: attributes_for(:author)
         }
       }
@@ -15,22 +17,22 @@ RSpec.describe AuthorResource, type: :resource do
       AuthorResource.build(payload)
     end
 
-    it 'works' do
+    it "works" do
       expect {
         expect(instance.save).to eq(true), instance.errors.full_messages.to_sentence
       }.to change { Author.count }.by(1)
     end
   end
 
-  describe 'updating' do
+  describe "updating" do
     let!(:author) { create(:author) }
 
     let(:payload) do
       {
         data: {
           id: author.id.to_s,
-          type: 'authors',
-          attributes: { } # Todo!
+          type: "authors",
+          attributes: {} # Todo!
         }
       }
     end
@@ -39,7 +41,7 @@ RSpec.describe AuthorResource, type: :resource do
       AuthorResource.find(payload)
     end
 
-    xit 'works (add some attributes and enable this spec)' do
+    xit "works (add some attributes and enable this spec)" do
       expect {
         expect(instance.update_attributes).to eq(true)
       }.to change { author.reload.updated_at }
@@ -47,14 +49,14 @@ RSpec.describe AuthorResource, type: :resource do
     end
   end
 
-  describe 'destroying' do
+  describe "destroying" do
     let!(:author) { create(:author) }
 
     let(:instance) do
       AuthorResource.find(id: author.id)
     end
 
-    it 'works' do
+    it "works" do
       expect {
         expect(instance.destroy).to eq(true)
       }.to change { Author.count }.by(-1)

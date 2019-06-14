@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Author < ApplicationRecord
   after_initialize :set_uuid
 

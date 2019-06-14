@@ -1,4 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe "authors#show", type: :request do
   let(:params) { {} }
@@ -7,14 +9,14 @@ RSpec.describe "authors#show", type: :request do
     jsonapi_get "/v1/authors/#{author.id}", params: params
   end
 
-  describe 'basic fetch' do
+  describe "basic fetch" do
     let!(:author) { create(:author) }
 
-    it 'works' do
+    it "works" do
       expect(AuthorResource).to receive(:find).and_call_original
       make_request
       expect(response.status).to eq(200)
-      expect(d.jsonapi_type).to eq('authors')
+      expect(d.jsonapi_type).to eq("authors")
       expect(d.id).to eq(author.id)
     end
   end

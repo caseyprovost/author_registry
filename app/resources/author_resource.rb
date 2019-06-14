@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AuthorResource < ApplicationResource
   attribute :id, :uuid do
     @object.uuid

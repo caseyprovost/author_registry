@@ -1,24 +1,26 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe "authors#create", type: :request do
   subject(:make_request) do
     jsonapi_post "/v1/authors", payload
   end
 
-  describe 'basic create' do
+  describe "basic create" do
     let(:params) do
       attributes_for(:author)
     end
     let(:payload) do
       {
         data: {
-          type: 'authors',
+          type: "authors",
           attributes: params
         }
       }
     end
 
-    it 'works' do
+    it "works" do
       expect(AuthorResource).to receive(:build).and_call_original
       expect {
         make_request
