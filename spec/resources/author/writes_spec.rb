@@ -30,7 +30,7 @@ RSpec.describe AuthorResource, type: :resource do
     let(:payload) do
       {
         data: {
-          id: author.id.to_s,
+          id: author.uuid.to_s,
           type: "authors",
           attributes: {}, # Todo!
         },
@@ -53,7 +53,7 @@ RSpec.describe AuthorResource, type: :resource do
     let!(:author) { create(:author) }
 
     let(:instance) do
-      AuthorResource.find(id: author.id)
+      AuthorResource.find(id: author.uuid)
     end
 
     it "works" do
