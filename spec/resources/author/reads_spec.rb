@@ -20,7 +20,7 @@ RSpec.describe AuthorResource, type: :resource do
 
     context "by id" do
       before do
-        params[:filter] = { id: { eq: author2.uuid } }
+        params[:filter] = {id: {eq: author2.uuid}}
       end
 
       it "works" do
@@ -44,7 +44,7 @@ RSpec.describe AuthorResource, type: :resource do
           render
           expect(jsonapi_data.map(&:id)).to eq([
             author1.uuid,
-            author2.uuid
+            author2.uuid,
           ])
         end
       end
@@ -58,7 +58,7 @@ RSpec.describe AuthorResource, type: :resource do
           render
           expect(jsonapi_data.map(&:id)).to eq([
             author2.uuid,
-            author1.uuid
+            author1.uuid,
           ])
         end
       end

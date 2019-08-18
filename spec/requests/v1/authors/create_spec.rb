@@ -15,8 +15,8 @@ RSpec.describe "authors#create", type: :request do
       {
         data: {
           type: "authors",
-          attributes: params
-        }
+          attributes: params,
+        },
       }
     end
 

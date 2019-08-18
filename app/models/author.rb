@@ -9,7 +9,7 @@ class Author < ApplicationRecord
 
   private
 
-    def set_uuid
-      self.uuid ||= SecureRandom.uuid
-    end
+  def set_uuid
+    self.uuid ||= SecureRandom.uuid
+  end
 end

@@ -36,7 +36,7 @@ module V1
       author = AuthorResource.find(params)
 
       if author.destroy
-        render jsonapi: { meta: {} }, status: 200
+        render jsonapi: {meta: {}}, status: 200
       else
         render jsonapi_errors: author
       end

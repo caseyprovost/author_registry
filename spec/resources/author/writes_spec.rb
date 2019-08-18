@@ -8,8 +8,8 @@ RSpec.describe AuthorResource, type: :resource do
       {
         data: {
           type: "authors",
-          attributes: attributes_for(:author)
-        }
+          attributes: attributes_for(:author),
+        },
       }
     end
 
@@ -32,8 +32,8 @@ RSpec.describe AuthorResource, type: :resource do
         data: {
           id: author.id.to_s,
           type: "authors",
-          attributes: {} # Todo!
-        }
+          attributes: {}, # Todo!
+        },
       }
     end
 
