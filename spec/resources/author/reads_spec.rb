@@ -9,7 +9,7 @@ RSpec.describe AuthorResource, type: :resource do
     it "works" do
       render
       data = jsonapi_data[0]
-      expect(data.id).to eq(author.id)
+      expect(data.id).to eq(author.uuid)
       expect(data.jsonapi_type).to eq("authors")
     end
   end
@@ -20,12 +20,12 @@ RSpec.describe AuthorResource, type: :resource do
 
     context "by id" do
       before do
-        params[:filter] = { id: { eq: author2.id } }
+        params[:filter] = { id: { eq: author2.uuid } }
       end
 
       it "works" do
         render
-        expect(d.map(&:id)).to eq([author2.id])
+        expect(jsonapi_data.map(&:id)).to eq([author2.uuid])
       end
     end
   end
@@ -42,9 +42,9 @@ RSpec.describe AuthorResource, type: :resource do
 
         it "works" do
           render
-          expect(d.map(&:id)).to eq([
-            author1.id,
-            author2.id
+          expect(jsonapi_data.map(&:id)).to eq([
+            author1.uuid,
+            author2.uuid
           ])
         end
       end
@@ -56,9 +56,9 @@ RSpec.describe AuthorResource, type: :resource do
 
         it "works" do
           render
-          expect(d.map(&:id)).to eq([
-            author2.id,
-            author1.id
+          expect(jsonapi_data.map(&:id)).to eq([
+            author2.uuid,
+            author1.uuid
           ])
         end
       end

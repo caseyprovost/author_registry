@@ -6,7 +6,7 @@ RSpec.describe "authors#show", type: :request do
   let(:params) { {} }
 
   subject(:make_request) do
-    jsonapi_get "/v1/authors/#{author.id}", params: params
+    jsonapi_get "/v1/authors/#{author.uuid}", params: params
   end
 
   describe "basic fetch" do
@@ -17,7 +17,7 @@ RSpec.describe "authors#show", type: :request do
       make_request
       expect(response.status).to eq(200)
       expect(d.jsonapi_type).to eq("authors")
-      expect(d.id).to eq(author.id)
+      expect(d.id).to eq(author.uuid)
     end
   end
 end

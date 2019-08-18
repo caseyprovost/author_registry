@@ -18,7 +18,7 @@ RSpec.describe "authors#index", type: :request do
       make_request
       expect(response.status).to eq(200), response.body
       expect(d.map(&:jsonapi_type).uniq).to match_array(["authors"])
-      expect(d.map(&:id)).to match_array([author1.id, author2.id])
+      expect(d.map(&:id)).to match_array([author1.uuid, author2.uuid])
     end
   end
 end

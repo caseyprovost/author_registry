@@ -13,5 +13,4 @@ class AuthorResource < ApplicationResource
   attribute :bio, :string
   attribute :date_of_birth, :date
   attribute :hometown, :string
-  attribute :uuid, :uuid
 end

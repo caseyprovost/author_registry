@@ -6,13 +6,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "2.6.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "~> 6.0.0.rc1"
+gem "rails", "~> 6.0.0"
 # Use postgresql as the database for Active Record
 gem "pg", ">= 0.18", "< 2.0"
 # Use Puma as the app server
 gem "puma", "~> 3.11"
 
-gem "rack-cors"
+# gem "rack-cors"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false
@@ -33,9 +33,7 @@ group :development, :test do
   gem "graphiti_spec_helpers"
   gem "pry"
   gem "pry-byebug"
-  gem "rubocop"
-  gem "rubocop-performance"
-  gem "rubocop-rspec"
+  gem "standard"
   gem "brakeman"
   gem "bundler-audit"
   gem "spring"
@@ -47,7 +45,7 @@ group :development do
 end
 
 group :test do
-  gem "rspec-rails", "~> 3.8"
+  gem "rspec-rails", "~> 4.0.0.beta.2"
   gem "test-prof"
 end
 
