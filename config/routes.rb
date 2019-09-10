@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   api_version(module: "V1", path: {value: "v1"}) do
+    mount VandalUi::Engine, at: '/vandal'
     resources :authors
   end
 end

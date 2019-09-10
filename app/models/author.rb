@@ -3,6 +3,8 @@
 class Author < ApplicationRecord
   after_initialize :set_uuid
 
+  validates :name, :date_of_birth, :hometown, :bio, presence: true
+
   def to_param
     uuid
   end

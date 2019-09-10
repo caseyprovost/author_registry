@@ -23,6 +23,7 @@ gem "responders"
 gem "versionist"
 gem "factory_bot_rails"
 gem "faker"
+gem "vandal_ui"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
